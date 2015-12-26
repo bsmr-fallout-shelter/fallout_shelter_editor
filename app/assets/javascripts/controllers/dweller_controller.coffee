@@ -1,6 +1,6 @@
 app = angular.module 'shelter', ['datatables']
 
-app.controller 'dwellersController', ($scope, DTOptionsBuilder, DTColumnDefBuilder) ->
+app.controller 'dwellersController', ["$scope", "DTOptionsBuilder", "DTColumnDefBuilder", ($scope, DTOptionsBuilder, DTColumnDefBuilder) ->
   $scope.dtOptions = DTOptionsBuilder.newOptions().withPaginationType('full_numbers')
   $scope.dtColumnDefs = [
     DTColumnDefBuilder.newColumnDef(0),
@@ -11,3 +11,4 @@ app.controller 'dwellersController', ($scope, DTOptionsBuilder, DTColumnDefBuild
   $scope.petInfo = (dweller) ->
     if dweller.equippedPet
       dweller.equippedPet.extraData.uniqueName + "/" + dweller.equippedPet.extraData.bonus + "/" + dweller.equippedPet.extraData.bonusValue
+]
