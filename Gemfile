@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 gem 'rails', '4.2.5'
-gem 'sqlite3'
+gem 'pg'
 gem 'bootstrap-sass'
 gem 'sass-rails', '~> 5.0'
 gem 'jquery-datatables-rails'
