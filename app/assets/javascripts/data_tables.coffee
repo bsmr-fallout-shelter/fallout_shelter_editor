@@ -1,0 +1,2 @@
+$ ->
+  $("#dwellers").dataTable()

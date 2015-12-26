@@ -1,0 +1,24 @@
+<input id="sav_file" type="file"></input>
+
+<table id="dwellers" datatable="ng" dt-options="dtOptions" dt-column-defs="dtColumnDefs" class="row-border hover">
+  <thead>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Last Name</th>
+    <th>Level</th>
+    <th>Max Health</th>
+    <th>Happiness</th>
+    <th>Pet</th>
+  </thead>
+  <tbody>
+    <tr ng-repeat="dweller in dwellers">
+      <td>{{ dweller.serializeId }}</td>
+      <td>{{ dweller.name }}</td>
+      <td>{{ dweller.lastName }}</td>
+      <td>{{ dweller.experience.currentLevel }}</td>
+      <td>{{ dweller.health.maxHealth }}</td>
+      <td>{{ dweller.happiness.happinessValue }}</td>
+      <td>{{ petInfo(dweller) }}</td>
+    </tr>
+  </tbody>
+</table>
