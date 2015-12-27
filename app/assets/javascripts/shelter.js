@@ -18,8 +18,8 @@ function handleFileSelect(e) {
           try {
             var shelter = decrypt(reader.result);
             scope = angular.element($('body').get(0)).scope();
-            scope.$apply(function(){
-              scope.dwellers = shelter.dwellers.dwellers;
+            scope.$apply(function() {
+              scope.init(shelter);
             });
           } catch (e) {
             alert("Error: " + e)

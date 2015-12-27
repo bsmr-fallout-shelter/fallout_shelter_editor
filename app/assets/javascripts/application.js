@@ -14,8 +14,10 @@
 //= require jquery_ujs
 //= require dataTables/jquery.dataTables
 //= require angular
+//= require angular-ui-bootstrap-tpls
 //= require angular-datatables
 //= require aes
 //= require shelter
-//= require controllers/dweller_controller
+//= require controllers/dwellersCtrl
+//= require controllers/dwellerCtrl
 //= require data_tables

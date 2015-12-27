@@ -6,9 +6,10 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body ng-app="shelter" ng-controller="dwellersController">
+<body ng-app="shelter" ng-controller="dwellersCtrl">
 
 <%= yield %>
 
+<%= render "shared/dweller" %>
 </body>
 </html>

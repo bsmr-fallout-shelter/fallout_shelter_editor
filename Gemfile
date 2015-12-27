@@ -11,6 +11,7 @@ gem 'angularjs-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
+gem 'angular-ui-bootstrap-rails'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-angular-datatables'

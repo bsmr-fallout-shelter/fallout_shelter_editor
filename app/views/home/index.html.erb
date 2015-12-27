@@ -9,6 +9,7 @@
     <th>Max Health</th>
     <th>Happiness</th>
     <th>Pet</th>
+    <th></th>
   </thead>
   <tbody>
     <tr ng-repeat="dweller in dwellers">
@@ -19,6 +20,7 @@
       <td>{{ dweller.health.maxHealth }}</td>
       <td>{{ dweller.happiness.happinessValue }}</td>
       <td>{{ petInfo(dweller) }}</td>
+      <td><a href="" ng-click="editDweller(dweller)">Edit</a></td>
     </tr>
   </tbody>
 </table>

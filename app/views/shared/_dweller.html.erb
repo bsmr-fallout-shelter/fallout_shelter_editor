@@ -1,0 +1,25 @@
+<script type="text/ng-template" id="dweller-form">
+  <div class="modal-header">
+    <h3 class="modal-title">Edit Dweller</h3>
+  </div>
+  <div class="modal-body">
+    <form role="form">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name" ng-model="dweller.name">
+    </div>
+    <div class="form-group">
+      <label for="last-name">Last Name:</label>
+      <input type="text" class="form-control" id="last-name" ng-model="dweller.lastName">
+    </div>
+    <div class="form-group">
+      <label for="level">Level:</label>
+      <input type="text" class="form-control" id="level" ng-model="dweller.experience.currentLevel">
+    </div>
+  </form>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+  </div>
+</script>
