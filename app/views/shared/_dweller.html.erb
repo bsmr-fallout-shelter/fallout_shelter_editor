@@ -14,8 +14,14 @@
     </div>
     <div class="form-group">
       <label for="level">Level:</label>
-      <input type="text" class="form-control" id="level" ng-model="dweller.experience.currentLevel">
+      <input type="number" class="form-control" id="level" max="50" min="1" ng-model="dweller.experience.currentLevel">
     </div>
+    <% %w(S P E C I A L).each_with_index do |stat, index| %>
+      <div class="form-group clearfix">
+        <label class="pull-left stat-label" for="strength"><%= stat %>:</label>
+        <slider class="pull-left stat-slider" ng-model="dweller.stats.stats[<%= index %>].value" min="1" step="1" max="10" value="dweller.stats.stats[<%= index %>].value"></slider>
+      </div>
+    <% end %>
   </form>
   </div>
   <div class="modal-footer">

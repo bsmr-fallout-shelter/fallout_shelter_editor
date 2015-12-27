@@ -1,4 +1,4 @@
-window.app = angular.module 'shelter', ['datatables', 'ui.bootstrap']
+window.app = angular.module 'shelter', ['datatables', 'ui.bootstrap', 'ui.bootstrap-slider']
 
 app.controller 'dwellersCtrl', ["$scope", "DTOptionsBuilder", "DTColumnDefBuilder", "$uibModal", ($scope, DTOptionsBuilder, DTColumnDefBuilder, $uibModal)->
   $scope.dtOptions = DTOptionsBuilder.newOptions().withPaginationType('full_numbers')

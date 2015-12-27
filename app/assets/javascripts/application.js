@@ -17,6 +17,8 @@
 //= require angular-ui-bootstrap-tpls
 //= require angular-datatables
 //= require bootstrap.file-input
+//= require bootstrap-slider
+//= require angular-bootstrap-slider
 //= require aes
 //= require shelter
 //= require controllers/dwellersCtrl
