@@ -66,4 +66,6 @@ function encrypt(fileName, save) {
 }
 $(function(){
   $("#sav_file").on("change", handleFileSelect);
+
+  $(".file").bootstrapFileInput();
 });
