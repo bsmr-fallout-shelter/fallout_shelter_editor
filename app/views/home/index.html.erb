@@ -1,26 +1,35 @@
-<input id="sav_file" type="file" class="file" title="Choose .sav file" data-filename-placement="inside"></input>
+<div ng-controller="dwellersCtrl">
+  <input id="sav_file" type="file" class="file" title="Choose .sav file" data-filename-placement="inside"></input>
 
-<table id="dwellers" datatable="ng" dt-options="dtOptions" dt-column-defs="dtColumnDefs" class="row-border hover">
-  <thead>
-    <th>ID</th>
-    <th>Name</th>
-    <th>Last Name</th>
-    <th>Level</th>
-    <th>Max Health</th>
-    <th>Happiness</th>
-    <th>Pet</th>
-    <th></th>
-  </thead>
-  <tbody>
-    <tr ng-repeat="dweller in dwellers">
-      <td>{{ dweller.serializeId }}</td>
-      <td>{{ dweller.name }}</td>
-      <td>{{ dweller.lastName }}</td>
-      <td>{{ dweller.experience.currentLevel }}</td>
-      <td>{{ dweller.health.maxHealth }}</td>
-      <td>{{ dweller.happiness.happinessValue }}</td>
-      <td>{{ petInfo(dweller) }}</td>
-      <td><a href="" ng-click="editDweller(dweller)">Edit</a></td>
-    </tr>
-  </tbody>
-</table>
+  <table id="dwellers" datatable="ng" dt-options="dtOptions" dt-column-defs="dtColumnDefs" class="row-border hover">
+    <thead>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Last Name</th>
+      <th>Level</th>
+      <th>Max Health</th>
+      <th>Happiness</th>
+      <th>Pet</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <tr ng-repeat="dweller in dwellers">
+        <td>{{ dweller.serializeId }}</td>
+        <td>{{ dweller.name }}</td>
+        <td>{{ dweller.lastName }}</td>
+        <td>{{ dweller.experience.currentLevel }}</td>
+        <td>{{ dweller.health.maxHealth }}</td>
+        <td>{{ dweller.happiness.happinessValue }}</td>
+        <td>{{ petInfo(dweller) }}</td>
+        <td><a href="" ng-click="editDweller(dweller)">Edit</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="col-sm-4">
+    <div class="form-group">
+      <input id="filename" class="form-control" type="text" ng-model="fileName" placeholder="Filename">
+    </div>
+    <button class="btn btn-success" ng-click="saveShelter()">Save</button>
+  </div>
+</div>

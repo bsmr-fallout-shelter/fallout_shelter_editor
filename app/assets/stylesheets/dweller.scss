@@ -1,8 +1,12 @@
-.stat-label {
-  width: 10px;
-}
+.stat-group {
+  margin-right: 15px;
 
-.stat-slider {
-  width: 100px;
-  margin-left: 15px;
+  .stat-label {
+    width: 10px;
+  }
+
+  .stat-slider {
+    width: 100px;
+    margin-left: 15px;
+  }
 }

@@ -6,6 +6,10 @@ app.controller 'dwellersCtrl', ["$scope", "DTOptionsBuilder", "DTColumnDefBuilde
     DTColumnDefBuilder.newColumnDef(0),
     DTColumnDefBuilder.newColumnDef(1)
   ];
+
+  $scope.PET_BOOSTS = ["XPBoost"]
+  $scope.PET_TYPES = ["bower_c"]
+
   $scope.shelter = JSON.parse(localStorage.getItem("shelter")) || {}
   $scope.dwellers = if localStorage.getItem("shelter") then $scope.shelter.dwellers.dwellers else []
 
@@ -23,7 +27,6 @@ app.controller 'dwellersCtrl', ["$scope", "DTOptionsBuilder", "DTColumnDefBuilde
       animation: $scope.animationsEnabled
       templateUrl: 'dweller-form'
       controller: 'dwellerCtrl'
-      # size: size
       resolve:
         dweller: ->
           angular.copy(dweller)
@@ -34,5 +37,7 @@ app.controller 'dwellersCtrl', ["$scope", "DTOptionsBuilder", "DTColumnDefBuilde
       )[0]
       angular.extend(dweller, modifiedDweller)
       localStorage.setItem("shelter", JSON.stringify($scope.shelter))
-]
 
+  $scope.saveShelter = ()->
+    encrypt($scope.fileName, $scope.shelter)
+]
