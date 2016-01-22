@@ -3,36 +3,60 @@
     <h3 class="modal-title">Edit Dweller</h3>
   </div>
   <div class="modal-body">
-    <form role="form">
+    <h4 class="modal-title">General</h3>
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name" ng-model="dweller.name">
+    </div>
+    <div class="form-group">
+      <label for="last-name">Last Name:</label>
+      <input type="text" class="form-control" id="last-name" ng-model="dweller.lastName">
+    </div>
+    <div class="form-group">
+      <label for="level">Level:</label>
+      <input type="number" class="form-control" id="level" max="50" min="1" ng-model="dweller.experience.currentLevel">
+    </div>
+    <div class="form-group">
+      <label for="max-health">Max Health:</label>
+      <input type="number" class="form-control" id="max-health" min="1" ng-model="dweller.health.maxHealth">
+    </div>
+    <div class="form-group">
+      <label for="happiness">Happiness:</label>
+      <input type="number" class="form-control" id="happiness" max="100" min="10" ng-model="dweller.happiness.happinessValue">
+    </div>
+    <div class="clearfix">
+      <% %w(S P E C I A L).each_with_index do |stat, index| %>
+        <div class="form-group pull-left stat-group">
+          <label class="pull-left stat-label" for="strength"><%= stat %>:</label>
+          <slider class="pull-left stat-slider" ng-model="dweller.stats.stats[<%= index %>].value" min="1" step="1" max="10" value="dweller.stats.stats[<%= index %>].value"></slider>
+        </div>
+      <% end %>
+    </div>
+    <h4 class="modal-title">
+      Pet
+      <a ng-if="!dweller.equippedPet" href="#" ng-click="addPet()"> Add</a>
+      <a ng-if="dweller.equippedPet" href="#" ng-click="removePet()"> Remove</a>
+    </h4>
+    <div ng-if="dweller.equippedPet">
       <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" class="form-control" id="name" ng-model="dweller.name">
+        <label for="pet-name">Name:</label>
+        <input type="text" class="form-control" id="pet-name" ng-model="dweller.equippedPet.extraData.uniqueName">
       </div>
       <div class="form-group">
-        <label for="last-name">Last Name:</label>
-        <input type="text" class="form-control" id="last-name" ng-model="dweller.lastName">
+        <label for="pet-id">Type:</label>
+        <select class="form-control" id="pet-id" ng-model="dweller.equippedPet.id">
+          <option ng-repeat="type in PET_TYPES" value="{{ type.id }}">{{ type.label }}</option>
+        </select>
       </div>
       <div class="form-group">
-        <label for="level">Level:</label>
-        <input type="number" class="form-control" id="level" max="50" min="1" ng-model="dweller.experience.currentLevel">
+        <label for="pet-bonus">Bonus:</label>
+        <select class="form-control" id="pet-bonus" ng-model="dweller.equippedPet.extraData.bonus" ng-options="bonus for bonus in PET_BONUSES"></select>
       </div>
       <div class="form-group">
-        <label for="max-health">Max Health:</label>
-        <input type="number" class="form-control" id="max-health" min="1" ng-model="dweller.health.maxHealth">
+        <label for="pet-bonus-value">Bonus Value:</label>
+        <input type="number" class="form-control" id="pet-bonus-value" min="1" ng-model="dweller.equippedPet.extraData.bonusValue">
       </div>
-      <div class="form-group">
-        <label for="happiness">Happiness:</label>
-        <input type="number" class="form-control" id="happiness" max="100" min="10" ng-model="dweller.happiness.happinessValue">
-      </div>
-      <div class="clearfix">
-        <% %w(S P E C I A L).each_with_index do |stat, index| %>
-          <div class="form-group pull-left stat-group">
-            <label class="pull-left stat-label" for="strength"><%= stat %>:</label>
-            <slider class="pull-left stat-slider" ng-model="dweller.stats.stats[<%= index %>].value" min="1" step="1" max="10" value="dweller.stats.stats[<%= index %>].value"></slider>
-          </div>
-        <% end %>
-      </div>
-    </form>
+    </div>
   </div>
   <div class="modal-footer">
     <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>

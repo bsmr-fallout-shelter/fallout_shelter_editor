@@ -7,9 +7,6 @@ app.controller 'dwellersCtrl', ["$scope", "DTOptionsBuilder", "DTColumnDefBuilde
     DTColumnDefBuilder.newColumnDef(1)
   ];
 
-  $scope.PET_BOOSTS = ["XPBoost"]
-  $scope.PET_TYPES = ["bower_c"]
-
   $scope.shelter = JSON.parse(localStorage.getItem("shelter")) || {}
   $scope.dwellers = if localStorage.getItem("shelter") then $scope.shelter.dwellers.dwellers else []
 
