@@ -35,6 +35,9 @@ app.controller 'dwellersCtrl', ["$scope", "DTOptionsBuilder", "DTColumnDefBuilde
       angular.extend(dweller, modifiedDweller)
       localStorage.setItem("shelter", JSON.stringify($scope.shelter))
 
+  $scope.deleteDweller = (dweller)->
+    $scope.dwellers.splice($scope.dwellers.indexOf(dweller), 1)
+
   $scope.saveShelter = ()->
     encrypt($scope.fileName, $scope.shelter)
 ]

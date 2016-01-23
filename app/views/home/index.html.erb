@@ -21,7 +21,10 @@
         <td>{{ dweller.health.maxHealth }}</td>
         <td>{{ dweller.happiness.happinessValue }}</td>
         <td>{{ petInfo(dweller) }}</td>
-        <td><a href="" ng-click="editDweller(dweller)">Edit</a></td>
+        <td>
+          <a href="" ng-click="editDweller(dweller)">Edit</a>&nbsp;
+          <a href="" ng-click="deleteDweller(dweller)">Delete</a>
+        </td>
       </tr>
     </tbody>
   </table>

@@ -19,6 +19,8 @@
 //= require bootstrap.file-input
 //= require bootstrap-slider
 //= require angular-bootstrap-slider
+//= require angular-confirm
+//= require file_saver
 //= require aes
 //= require shelter
 //= require controllers/dwellersCtrl
