@@ -1,2 +1,2 @@
 $ ->
-  $("#dwellers").dataTable()
+  $("#dwellers-table").dataTable()

@@ -1,7 +1,7 @@
-<div ng-controller="dwellersCtrl">
+<div id="dwellers" ng-controller="dwellersCtrl">
   <input id="sav_file" type="file" class="file" title="Choose .sav file" data-filename-placement="inside"></input>
 
-  <table id="dwellers" datatable="ng" dt-options="dtOptions" dt-column-defs="dtColumnDefs" class="row-border hover">
+  <table id="dwellers-table" datatable="ng" dt-options="dtOptions" class="row-border hover">
     <thead>
       <th>ID</th>
       <th>Name</th>
@@ -13,7 +13,7 @@
       <th></th>
     </thead>
     <tbody>
-      <tr ng-repeat="dweller in dwellers">
+      <tr ng-repeat="dweller in dwellers track by dweller.serializeId">
         <td>{{ dweller.serializeId }}</td>
         <td>{{ dweller.name }}</td>
         <td>{{ dweller.lastName }}</td>
@@ -28,6 +28,12 @@
       </tr>
     </tbody>
   </table>
+
+  <div class="col-sm-12">
+    <div class="form-group">
+      <button class="btn btn-success" ng-click="newDweller()">Add Dweller</button>
+    </div>
+  </div>
 
   <div class="col-sm-4">
     <div class="form-group">

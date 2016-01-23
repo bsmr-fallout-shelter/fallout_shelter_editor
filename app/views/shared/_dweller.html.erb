@@ -28,7 +28,7 @@
       <% %w(S P E C I A L).each_with_index do |stat, index| %>
         <div class="form-group pull-left stat-group">
           <label class="pull-left stat-label" for="strength"><%= stat %>:</label>
-          <slider class="pull-left stat-slider" ng-model="dweller.stats.stats[<%= index %>].value" min="1" step="1" max="10" value="dweller.stats.stats[<%= index %>].value"></slider>
+          <slider class="pull-left stat-slider" ng-model="dweller.stats.stats[<%= index + 1 %>].value" min="1" step="1" max="10"></slider>
         </div>
       <% end %>
     </div>

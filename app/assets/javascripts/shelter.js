@@ -17,7 +17,7 @@ function handleFileSelect(e) {
         reader.onload = function (evt2) {
           try {
             var shelter = decrypt(reader.result);
-            scope = angular.element($('body').get(0)).scope();
+            scope = angular.element($('#dwellers').get(0)).scope();
             scope.$apply(function() {
               scope.init(shelter);
             });
